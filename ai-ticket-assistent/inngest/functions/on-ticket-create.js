@@ -59,7 +59,7 @@ export const onTicketCreated = inngest.createFunction(
           });
         }
         await ticket.findByIdAndUpdate(ticketExist._id, {
-          assignedTo: userExist?._id || null,
+          assignedTo: userExist?._id,
         });
         return userExist;
       });

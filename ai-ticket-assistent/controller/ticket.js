@@ -70,7 +70,7 @@ export const getTicket = async (req, res) => {
       ticketSingle = await ticket.findOne({
         createdBy: user._id,
         _id: req.params.id,
-      });
+      }).populate("assignedTo", ["email", "_id"]);;
     }
 
     if (!ticketSingle) {
